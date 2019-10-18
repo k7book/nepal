@@ -1,5 +1,5 @@
 Visual Code
-    VSCODE 단축키
+    단축키 한글
       기본
             ctrl+X    행 삭제 (빈 선택)    editor.action.clipboardCutAction
             ctrl+C    행 복사 (빈 선택)    editor.action.clipboardCopyAction
@@ -199,306 +199,161 @@ Visual Code
         이번 2018년 2월 릴리즈에서 새로 추가된 기능으로 터미널 화면을 분할 해준다.
       터미널에서 링크 클릭 하기
         cmd 키를 누른 상태로 클릭을 하면 링크가 브라우저에서 열린다.
-    샘플3
-        기본
-            Ctrl+X            줄 삭제 (잘라내기)
-            Ctrl+C            줄 복사
-            Ctrl+Shift+K      줄 삭제
-            Ctrl+Enter        커서 위에 빈줄 생성
-            Ctrl+Shift+Enter  커서 아래에 빈줄 생성
-            Alt+Down          줄 아래로 이동
-            Alt+Up            줄 위로 이동
-            Shift+Alt+Down    그줄을 아래로 복제
-            Shift+Alt+Up      그중을 위로 복제
-            Ctrl+D            같은 단어를 추가하며 검색
-            Ctrl+K Ctrl+D     현재 단어 끝에 도달 계속 같은 단어 끝으로 이동
-            Ctrl+U            직전 커서 명령 취소
-            Shift+Alt+I       여러 라인을 선택 후 각 라인 끝에 커서를 위치
-            Ctrl+Shift+L      현재 선택 부분과 동일한 모든 것을 선택
-            Ctrl+F2           커서가 위치한 동일한 모든 단어를 선택
-            Ctrl+I            커서가 위치한 라인 선택
-            Ctrl+Alt+Down     다중 커서 아래로
-            Ctrl+Alt+Up       다중 커서 위로
-            Ctrl+Shift+\      매칭되는 괄호로 점프
-            Ctrl+]            라인 들여쓰기
-            Ctrl+[            라인 내여쓰기
-            Home              라인 시작으로
-            End               라인 끝으로
-            Ctrl+End          파일의 맨 끝으로
-            Ctrl+Home         파일의 맨 처음으로
-            Ctrl+Down         커서는 두고 페이지를 위로
-            Ctrl+Up           커서는 두고 페이지를 아래로
-            Alt+PageDown      커서는 두고 한 페이지 위로
-            Alt+PageUp        커서는 두고 한 페이지 아래로
-            Ctrl+Shift+[      커서가 있는 블럭 접음
-            Ctrl+Shift+]      커서 하위 블럭 폄
-            Ctrl+K Ctrl+[     괄호아래 모든 블럭 접음
-            Ctrl+K Ctrl+]     괄호아래 모든 블럭 폄
-            Ctrl+K Ctrl+0     파일의 모든 블럭 접음
-            Ctrl+K Ctrl+J     파일의 모든 블럭 폄
-            Ctrl+K Ctrl+C     그 줄을 주석으로 변경
-            Ctrl+K Ctrl+U     주석 제거
-            Ctrl+/            주석 토글
-            Shift+Alt+A       선택 블럭 /**/ 주석 토글
-            Ctrl+F            검색
-            Ctrl+H            찾아 바꾸기
-            F3                다음 찾기
-            Shift+F3          앞으로 찾기
-            Alt+Enter         찾은 단어와 같은 단어를 모두 선택, 다중커서
-            Alt+C             검색 시 대소문자 구분 토글
-            Alt+R             Toggle Find Regex
-            Alt+W             정확히 그 단어만 토글
-            Ctrl+M            Toggle Use of Tab Key for Setting Focus
-            unassigned        Toggle Render Whitespace
-            Alt+Z             자동 줄바꿈 토글
-
-        추가 편집 기능
-            Ctrl+Space        자동 완성 추천
-            Ctrl+Shift+Space  Trigger Parameter Hints
-            Shift+Alt+F       Format Document
-            Ctrl+K Ctrl+F     Format Selection
-            F12               Go to Definition
-            Alt+F12           Peek Definition
-            Ctrl+K F12        Open Definition to the Side
-            Ctrl+.            Quick Fix
-            Shift+F12         Show References
-            F2                Rename Symbol
-            Ctrl+Shift+.      Replace with Next Value
-            Ctrl+Shift+,      Replace with Previous Value
-            Shift+Alt+Right   Expand AST Select
-            Shift+Alt+Left    Shrink AST Select
-            Ctrl+K Ctrl+X     Trim Trailing Whitespace
-            Ctrl+K M          Change Language Mode
-        이동
-            Ctrl+T            Show All Symbols
-            Ctrl+G            줄번호로 이동
-            Ctrl+P            Go to File..., Quick Open
-            Ctrl+Shift+O      Go to Symbol...
-            Ctrl+Shift+M      Show Problems
-            F8                Go to Next Error or Warning
-            Shift+F8          Go to Previous Error or Warning
-            Ctrl+Shift+P      모든 명령어 보기
-            Ctrl+Shift+Tab    Navigate Editor Group History
-            Alt+Left          구문 단위로 뒤로 이동
-            Alt+Right         구문 단위로 앞으로 이동
-        편집기 창 관리
-            Ctrl+Shift+N          새 창 열기
-            Ctrl+W                현재 탭 닫기
-            Ctrl+F4               프로그램 종료
-            Ctrl+K F              현재 폴더 닫기
-            Ctrl+\                창 수직 나누기
-            Ctrl+1                1번 탭으로 이동
-            Ctrl+2                2번 탭으로 이동
-            Ctrl+3                3번 탭으로 이동
-            Ctrl+K Ctrl+Left      왼쪽 탭으로 이동
-            Ctrl+K Ctrl+Right     오른쪽 탭으로 이동
-            Ctrl+Shift+PageUp     Move Editor Left
-            Ctrl+Shift+PageDown   Move Editor Right
-            Ctrl+K Left           왼쪽 탭으로 이동
-            Ctrl+K Right          오른쪽 탭으로 이동
-        파일 다루기
-            Ctrl+N            새 파일
-            Ctrl+O            파일 열기
-            Ctrl+S            저장
-            unassigned        Save All
-            Ctrl+Shift+S      다른 이름으로 저장
-            Ctrl+F4           프로그램 종료
-            unassigned        Close Others
-            Ctrl+K W          Close Group
-            unassigned        Close Other Groups
-            unassigned        Close Group to Left
-            unassigned        Close Group to Right
-            Ctrl+K Ctrl+W     모든 창 닫기
-            Ctrl+Shift+T      Reopen Closed Editor
-            Ctrl+K Enter      Keep Open
-            Ctrl+Tab          Open Next
-            Ctrl+Shift+Tab    Open Previous
-            Ctrl+K P          Copy Path of Active File
-            Ctrl+K R          Reveal Active File in Windows
-            Ctrl+K O          Show Opened File in New Window
-            unassigned        Compare Opened File With
-        보이기
-            F11               전체 화면 토글
-            Ctrl+K Z          좀더 전체 화면
-            Escape Escape     좀더 전체 화면 나가기
-            Ctrl+=            글자 크게
-            Ctrl+-            글자 작게
-            Ctrl+Numpad0      글자 크기 원래로
-            Ctrl+B            사이드 영역 보이기 토글
-            Ctrl+Shift+E      Show Explorer / Toggle Focus
-            Ctrl+Shift+D      Show Debug
-            Ctrl+Shift+G      Show Git
-            Ctrl+Shift+X      Show Extensions
-            Ctrl+Shift+U      Show Output
-            Ctrl+Q            Quick Open View
-            Ctrl+Shift+F      Show Search
-            Ctrl+Shift+H      Replace in Files
-            Ctrl+Shift+J      Toggle Search Details
-            Ctrl+Shift+C      Open New Command Prompt
-            Ctrl+Shift+V      Toggle Markdown Preview
-            Ctrl+K V          Open Preview to the Side
-            Ctrl+`            Toggle Integrated Terminal
-        Preferences
-            unassigned    Open User Settings
-            unassigned    Open Workspace Settings
-            Ctrl+K Ctrl+S Open Keyboard Shortcuts
-            unassigned    Open User Snippets
-            Ctrl+K Ctrl+T Select Color Theme
-            unassigned    Configure Display Language
-        Debug
-            F9            Toggle Breakpoint
-            F5            Start
-            F5            Continue
-            Ctrl+F5       Start (without debugging)
-            F6            Pause
-            F11           Step Into
-            Shift+F11     Step Out
-            F10           Step Over
-            Shift+F5      Stop
-            Ctrl+K Ctrl+I Show Hover
-        Tasks
-            Ctrl+Shift+B  Run Build Task
-            unassigned    Run Test Task
-    기본 단축키
-        General
-            Ctrl+Shift+P, F1 Show Command Palette
-            Ctrl+P Quick Open, Go to File…
-            Ctrl+Shift+N New window/instance
-            Ctrl+Shift+W Close window/instance
-            Ctrl+, User Settings
-            Ctrl+K Ctrl+S Keyboard Shortcuts
-        Basic editing
-            Ctrl+X Cut line (empty selection)
-            Ctrl+C Copy line (empty selection)
-            Alt+ ↑ / ↓ Move line up/down
-            Shift+Alt + ↓ / ↑ Copy line up/down
-            Ctrl+Shift+K Delete line
-            Ctrl+Enter Insert line below
-            Ctrl+Shift+Enter Insert line above
-            Ctrl+Shift+\ Jump to matching bracket
-            Ctrl+] / [ Indent/outdent line
-            Home / End Go to beginning/end of line
-            Ctrl+Home Go to beginning of file
-            Ctrl+End Go to end of file
-            Ctrl+↑ / ↓ Scroll line up/down
-            Alt+PgUp / PgDn Scroll page up/down
-            Ctrl+Shift+[ Fold (collapse) region
-            Ctrl+Shift+] Unfold (uncollapse) region
-            Ctrl+K Ctrl+[ Fold (collapse) all subregions
-            Ctrl+K Ctrl+] Unfold (uncollapse) all subregions
-            Ctrl+K Ctrl+0 Fold (collapse) all regions
-            Ctrl+K Ctrl+J Unfold (uncollapse) all regions
-            Ctrl+K Ctrl+C Add line comment
-            Ctrl+K Ctrl+U Remove line comment
-            Ctrl+/ Toggle line comment
-            Shift+Alt+A Toggle block comment
-            Alt+Z Toggle word wrap
-        Navigation
-            Ctrl+T Show all Symbols
-            Ctrl+G Go to Line...
-            Ctrl+P Go to File...
-            Ctrl+Shift+O Go to Symbol...
-            Ctrl+Shift+M Show Problems panel
-            F8 Go to next error or warning
-            Shift+F8 Go to previous error or warning
-            Ctrl+Shift+Tab Navigate editor group history
-            Alt+ ← / → Go back / forward
-            Ctrl+M Toggle Tab moves focus
-        Search and replace
-            Ctrl+F Find
-            Ctrl+H Replace
-            F3 / Shift+F3 Find next/previous
-            Alt+Enter Select all occurences of Find match
-            Ctrl+D Add selection to next Find match
-            Ctrl+K Ctrl+D Move last selection to next Find match
-            Alt+C / R / W Toggle case-sensitive / regex / whole word
-        Multi-cursor and selection
-            Alt+Click Insert cursor
-            Ctrl+Alt+ ↑ / ↓ Insert cursor above / below
-            Ctrl+U Undo last cursor operation
-            Shift+Alt+I Insert cursor at end of each line selected
-            Ctrl+I Select current line
-            Ctrl+Shift+L Select all occurrences of current selection
-            Ctrl+F2 Select all occurrences of current word
-            Shift+Alt+→ Expand selection
-            Shift+Alt+← Shrink selection
-            Shift+Alt +
-            (drag mouse)
-            Column (box) selection
-            Ctrl+Shift+Alt
-            + (arrow key)
-            Column (box) selection
-            Ctrl+Shift+Alt
-            +PgUp/PgDn
-            Column (box) selection page up/down
-        Rich languages editing
-            Ctrl+Space Trigger suggestion
-            Ctrl+Shift+Space Trigger parameter hints
-            Shift+Alt+F Format document
-            Ctrl+K Ctrl+F Format selection
-            F12 Go to Definition
-            Alt+F12 Peek Definition
-            Ctrl+K F12 Open Definition to the side
-            Ctrl+. Quick Fix
-            Shift+F12 Show References
-            F2 Rename Symbol
-            Ctrl+K Ctrl+X Trim trailing whitespace
-            Ctrl+K M Change file language
-        Editor management
-            Ctrl+F4, Ctrl+W Close editor
-            Ctrl+K F Close folder
-            Ctrl+\ Split editor
-            Ctrl+ 1 / 2 / 3 Focus into 1
-            st, 2nd or 3rd editor group
-            Ctrl+K Ctrl+ ←/→ Focus into previous/next editor group
-            Ctrl+Shift+PgUp / PgDn Move editor left/right
-            Ctrl+K ← / → Move active editor group
-        File management
-            Ctrl+N New File
-            Ctrl+O Open File...
-            Ctrl+S Save
-            Ctrl+Shift+S Save As...
-            Ctrl+K S Save All
-            Ctrl+F4 Close
-            Ctrl+K Ctrl+W Close All
-            Ctrl+Shift+T Reopen closed editor
-            Ctrl+K Enter Keep preview mode editor open
-            Ctrl+Tab Open next
-            Ctrl+Shift+Tab Open previous
-            Ctrl+K P Copy path of active file
-            Ctrl+K R Reveal active file in Explorer
-            Ctrl+K O Show active file in new window/instance
-        Display
-            F11 Toggle full screen
-            Shift+Alt+0 Toggle editor layout (horizontal/vertical)
-            Ctrl+ = / - Zoom in/out
-            Ctrl+B Toggle Sidebar visibility
-            Ctrl+Shift+E Show Explorer / Toggle focus
-            Ctrl+Shift+F Show Search
-            Ctrl+Shift+G Show Source Control
-            Ctrl+Shift+D Show Debug
-            Ctrl+Shift+X Show Extensions
-            Ctrl+Shift+H Replace in files
-            Ctrl+Shift+J Toggle Search details
-            Ctrl+Shift+U Show Output panel
-            Ctrl+Shift+V Open Markdown preview
-            Ctrl+K V Open Markdown preview to the side
-            Ctrl+K Z Zen Mode (Esc Esc to exit)
-        Debug
-            F9 Toggle breakpoint
-            F5 Start/Continue
-            Shift+F5 Stop
-            F11 / Shift+F11 Step into/out
-            F10 Step over
-            Ctrl+K Ctrl+I Show hover
-        Integrated terminal
-            Ctrl+` Show integrated terminal
-            Ctrl+Shift+` Create new terminal
-            Ctrl+C Copy selection
-            Ctrl+V Paste into active terminal
-            Ctrl+↑ / ↓ Scroll up/down
-            Shift+PgUp / PgDn Scroll page up/down
-            Ctrl+Home / End Scroll to top/bottom
-            Keyboard shortcuts for Windows
-            Other operating systems’ keyboard shortcuts and additional
-            unassigned shortcuts available at aka.ms/vscodekeybindings
+    단축키 간략
+            기본
+                Ctrl+X            줄 삭제 (잘라내기)
+                Ctrl+C            줄 복사
+                Ctrl+Shift+K      줄 삭제
+                Ctrl+Enter        커서 위에 빈줄 생성
+                Ctrl+Shift+Enter  커서 아래에 빈줄 생성
+                Alt+Down          줄 아래로 이동
+                Alt+Up            줄 위로 이동
+                Shift+Alt+Down    그줄을 아래로 복제
+                Shift+Alt+Up      그중을 위로 복제
+                Ctrl+D            같은 단어를 추가하며 검색
+                Ctrl+K Ctrl+D     현재 단어 끝에 도달 계속 같은 단어 끝으로 이동
+                Ctrl+U            직전 커서 명령 취소
+                Shift+Alt+I       여러 라인을 선택 후 각 라인 끝에 커서를 위치
+                Ctrl+Shift+L      현재 선택 부분과 동일한 모든 것을 선택
+                Ctrl+F2           커서가 위치한 동일한 모든 단어를 선택
+                Ctrl+I            커서가 위치한 라인 선택
+                Ctrl+Alt+Down     다중 커서 아래로
+                Ctrl+Alt+Up       다중 커서 위로
+                Ctrl+Shift+\      매칭되는 괄호로 점프
+                Ctrl+]            라인 들여쓰기
+                Ctrl+[            라인 내여쓰기
+                Home              라인 시작으로
+                End               라인 끝으로
+                Ctrl+End          파일의 맨 끝으로
+                Ctrl+Home         파일의 맨 처음으로
+                Ctrl+Down         커서는 두고 페이지를 위로
+                Ctrl+Up           커서는 두고 페이지를 아래로
+                Alt+PageDown      커서는 두고 한 페이지 위로
+                Alt+PageUp        커서는 두고 한 페이지 아래로
+                Ctrl+Shift+[      커서가 있는 블럭 접음
+                Ctrl+Shift+]      커서 하위 블럭 폄
+                Ctrl+K Ctrl+[     괄호아래 모든 블럭 접음
+                Ctrl+K Ctrl+]     괄호아래 모든 블럭 폄
+                Ctrl+K Ctrl+0     파일의 모든 블럭 접음
+                Ctrl+K Ctrl+J     파일의 모든 블럭 폄
+                Ctrl+K Ctrl+C     그 줄을 주석으로 변경
+                Ctrl+K Ctrl+U     주석 제거
+                Ctrl+/            주석 토글
+                Shift+Alt+A       선택 블럭 /**/ 주석 토글
+                Ctrl+F            검색
+                Ctrl+H            찾아 바꾸기
+                F3                다음 찾기
+                Shift+F3          앞으로 찾기
+                Alt+Enter         찾은 단어와 같은 단어를 모두 선택, 다중커서
+                Alt+C             검색 시 대소문자 구분 토글
+                Alt+R             Toggle Find Regex
+                Alt+W             정확히 그 단어만 토글
+                Ctrl+M            Toggle Use of Tab Key for Setting Focus
+                Alt+Z             자동 줄바꿈 토글
+            추가 편집 기능
+                Ctrl+Space        자동 완성 추천
+                Ctrl+Shift+Space  Trigger Parameter Hints
+                Shift+Alt+F       Format Document
+                Ctrl+K Ctrl+F     Format Selection
+                F12               Go to Definition
+                Alt+F12           Peek Definition
+                Ctrl+K F12        Open Definition to the Side
+                Ctrl+.            Quick Fix
+                Shift+F12         Show References
+                F2                Rename Symbol
+                Ctrl+Shift+.      Replace with Next Value
+                Ctrl+Shift+,      Replace with Previous Value
+                Shift+Alt+Right   Expand AST Select
+                Shift+Alt+Left    Shrink AST Select
+                Ctrl+K Ctrl+X     Trim Trailing Whitespace
+                Ctrl+K M          Change Language Mode
+            이동
+                Ctrl+T            Show All Symbols
+                Ctrl+G            줄번호로 이동
+                Ctrl+P            Go to File..., Quick Open
+                Ctrl+Shift+O      Go to Symbol...
+                Ctrl+Shift+M      Show Problems
+                F8                Go to Next Error or Warning
+                Shift+F8          Go to Previous Error or Warning
+                Ctrl+Shift+P      모든 명령어 보기
+                Ctrl+Shift+Tab    Navigate Editor Group History
+                Alt+Left          구문 단위로 뒤로 이동
+                Alt+Right         구문 단위로 앞으로 이동
+            편집기 윈도우 관리
+                Ctrl+Shift+N          새 창 열기
+                Ctrl+W                현재 탭 닫기
+                Ctrl+F4               프로그램 종료
+                Ctrl+K F              현재 폴더 닫기
+                Ctrl+\                창 수직 나누기
+                Ctrl+1                1번 탭으로 이동
+                Ctrl+2                2번 탭으로 이동
+                Ctrl+3                3번 탭으로 이동
+                Ctrl+K Ctrl+Left      왼쪽 탭으로 이동
+                Ctrl+K Ctrl+Right     오른쪽 탭으로 이동
+                Ctrl+Shift+PageUp     Move Editor Left
+                Ctrl+Shift+PageDown   Move Editor Right
+                Ctrl+K Left           왼쪽 탭으로 이동
+                Ctrl+K Right          오른쪽 탭으로 이동
+            파일 다루기
+                Ctrl+N            새 파일
+                Ctrl+O            파일 열기
+                Ctrl+S            저장
+                Ctrl+Shift+S      다른 이름으로 저장
+                Ctrl+F4           프로그램 종료
+                Ctrl+K W          Close Group
+                Ctrl+K Ctrl+W     모든 창 닫기
+                Ctrl+Shift+T      Reopen Closed Editor
+                Ctrl+K Enter      Keep Open
+                Ctrl+Tab          Open Next
+                Ctrl+Shift+Tab    Open Previous
+                Ctrl+K P          Copy Path of Active File
+                Ctrl+K R          Reveal Active File in Windows
+                Ctrl+K O          Show Opened File in New Window
+            보이기
+                F11               전체 화면 토글
+                Ctrl+K Z          좀더 전체 화면
+                Escape Escape     좀더 전체 화면 나가기
+                Ctrl+=            글자 크게
+                Ctrl+-            글자 작게
+                Ctrl+Numpad0      글자 크기 원래로
+                Ctrl+B            사이드 영역 보이기 토글
+                Ctrl+Shift+E      Show Explorer / Toggle Focus
+                Ctrl+Shift+D      Show Debug
+                Ctrl+Shift+G      Show Git
+                Ctrl+Shift+X      Show Extensions
+                Ctrl+Shift+U      Show Output
+                Ctrl+Q            Quick Open View
+                Ctrl+Shift+F      Show Search
+                Ctrl+Shift+H      Replace in Files
+                Ctrl+Shift+J      Toggle Search Details
+                Ctrl+Shift+C      Open New Command Prompt
+                Ctrl+Shift+V      Toggle Markdown Preview
+                Ctrl+K V          Open Preview to the Side
+                Ctrl+`            Toggle Integrated Terminal
+            환경설정
+                Ctrl+K Ctrl+S Open Keyboard Shortcuts
+                Ctrl+K Ctrl+T Select Color Theme
+            디버그
+                F9            Toggle Breakpoint
+                F5            Start
+                F5            Continue
+                Ctrl+F5       Start (without debugging)
+                F6            Pause
+                F11           Step Into
+                Shift+F11     Step Out
+                F10           Step Over
+                Shift+F5      Stop
+                Ctrl+K Ctrl+I Show Hover
+            작업목록
+                Ctrl+Shift+B  Run Build Task
+                unassigned    Run Test Task
+                Ctrl+` Show integrated terminal
+                Ctrl+Shift+` Create new terminal
+                Ctrl+C Copy selection
+                Ctrl+V Paste into active terminal
+                Ctrl+↑ / ↓ Scroll up/down
+                Shift+PgUp / PgDn Scroll page up/down
+                Ctrl+Home / End Scroll to top/bottom
+                Keyboard shortcuts for Windows
+                Other operating systems’ keyboard shortcuts and additional
+                unassigned shortcuts available at aka.ms/vscodekeybindings

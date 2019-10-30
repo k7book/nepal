@@ -5,7 +5,7 @@
     [http://car-ux.com/](http://car-ux.com/)
     [http://news.naver.com/main/hotissue/sectionList.nhn?mid=hot&sid1=110&cid=1080993]
     [http://waifu2x.udp.jp/index.ko.html](http://waifu2x.udp.jp/index.ko.html)
-    [https://audio-cutter.com/ko](https://audio-cutter.com/ko)
+    [                 https://audio-cutter.com/ko](https://audio-cutter.com/ko)
     [https://docs.microsoft.com/ko-kr/power-bi/desktop-getting-started?Is=desktop_thankyou](https://docs.microsoft.com/ko-kr/power-bi/desktop-getting-started?Is=desktop_thankyou)
     [https://duckduckgo.com](https://duckduckgo.com/)
     [https://ezgif.com](https://ezgif.com/)

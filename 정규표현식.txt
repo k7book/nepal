@@ -51,7 +51,6 @@
     (a(bc))	Capture Sub-group
     (.*)	Capture all
     (abc|def)	Matches abc or def
-
 표현식
     ^x 문자열의 시작을 표현하며 x 문자로 시작됨을 의미한다.
     x$ 문자열의 종료를 표현하며 x 문자로 종료됨을 의미한다. 
@@ -80,12 +79,9 @@
     \v  vertical tab을 표현하며 수직 탭(?) 문자를 의미한다. 
     \w  word 를 표현하며 알파벳 + 숫자 + _ 중의 한 문자임을 의미한다.  
     \W  non word를 표현하며 알파벳 + 숫자 + _ 가 아닌 문자를 의미한다. 
-
     g Global 의 표현하며 대상 문자열내에 모든 패턴들을 검색하는 것을 의미한다.  
     i Ignore case 를 표현하며 대상 문자열에 대해서 대/소문자를 식별하지 않는 것을 의미한다.
     m Multi line을 표현하며 대상 문자열이 다중 라인의 문자열인 경우에도 검색하는 것을 의미한다. 
-
-
  Character classes
     .	any character except newline
     \w\d\s	word, digit, whitespace
@@ -97,35 +93,21 @@
     ^abc$	start / end of the string
     \b\B	word, not-word boundary
 Escaped characters
-\.\*\\	escaped special characters
-\t\n\r	tab, linefeed, carriage return
-Groups & Lookaround
-(abc)	capture group
-\1	backreference to group #1
-(?:abc)	non-capturing group
-(?=abc)	positive lookahead
-(?!abc)	negative lookahead
-Quantifiers & Alternation
-a*a+a?	0 or more, 1 or more, 0 or 1
-a{5}a{2,}	exactly five, two or more
-a{1,3}	between one & three
-a+?a{2,}?	match as few as possible
-ab|cd	match ab or cd
+    \.\*\\	escaped special characters
+    \t\n\r	tab, linefeed, carriage return
+    Groups & Lookaround
+    (abc)	capture group
+    \1	backreference to group #1
+    (?:abc)	non-capturing group
+    (?=abc)	positive lookahead
+    (?!abc)	negative lookahead
+    Quantifiers & Alternation
+    a*a+a?	0 or more, 1 or more, 0 or 1
+    a{5}a{2,}	exactly five, two or more
+    a{1,3}	between one & three
+    a+?a{2,}?	match as few as possible
+    ab|cd	match ab or cd
 
-자주쓰는 문구
-    숫자만 : ^[0-9]*$
-    영문자만 : ^[a-zA-Z]*$
-    한글만 : ^[가-힣]*$
-    영어 & 숫자만 : ^[a-zA-Z0-9]*$
-    E-Mail : ^[a-zA-Z0-9]+@[a-zA-Z0-9]+$
-    휴대폰 :
-     ^01(?:0|1|[6-9]) - (?:\d{3}|\d{4}) - \d{4}$
-    /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/
-
-
-    일반전화 : ^\d{2,3} - \d{3,4} - \d{4}$
-    주민등록번호 : \d{6} \- [1-4]\d{6}
-    IP 주소 : ([0-9]{1,3}) \. ([0-9]{1,3}) \. ([0-9]{1,3}) \. ([0-9]{1,3})
 
 기본메타문자
     . 모든 문자 일치
@@ -155,7 +137,6 @@ ab|cd	match ab or cd
         'st\b'는 "test"의 st는 찾지만, "tester"의 st는 찾지 않음 
         * test test에서 test 사이의 빈공간인 space와는 다른 의미
     \B \b와 반대(비단어 경계)로 일치. 즉 "\b"의 예제의 반대 결과가 나옴
-
 특수한 문자
     [\b] 역스페이스
     \cx x로 표시된 제어문자 찾기. x는 [A-Za-z] 이어야 함. 아니면 c는 리터럴 'c'로 간주 예) \cM = Contorl-M 이나 캐리지 리턴 문자
@@ -171,19 +152,16 @@ ab|cd	match ab or cd
     \w 영숫자 문자나 밑줄과 일치. [a-zA-Z0-9_]
     \W \w와 반대로 일치. [^a-zA-Z0-9_]
     \xn n으로 표시된 16진수 이스케이프 값과 일치. 16진수는 정확히 2자리여야 함
-
 대소문자 변환
     \E  \L 혹은 \U 변환을 끝냄
     \I  다음에 오는 글자를 소문자로 변환
     \L  \E를 만날 때까지 모든 문자를 소문자로 변환
     \u  다음에 오는 글자를 대문자로 변환
     \U  \E를 만날 때까지 모든 문자를 대문자로 변환
-
 옵션
     i ignore case, 대소문자를 무시하여 찾음. 굳이 [a-zA-Z]라고 할 필요가 없음
     g global, 찾는 패턴을 하나만 찾지 말고 계속 해서 찾음. 탐욕적 수량자처럼 일치하는 구간을 늘리는 것이 아니라 일치하는 패턴의 개수가 늘어남
     m  multiline, 다중행 모드라고도 하며 라인 별로 처리하는 것이 아니라 입력 문자열에 줄바꿈이 있어도 이를 특수문자로 변환하여 하나로 봄. 가장 큰 차이를 경험할 수 있는 기능은 ^와 $임.
-
 우선순위
     \ 이스케이프
     (), (?:), (?=), [] 괄호와 대괄호
@@ -217,7 +195,18 @@ ab|cd	match ab or cd
     style="" 제거   $STRING=preg_replace("/ style=(\"|\')?([^\"\']+)(\"|\')?/","",$STRING); // style="border:0..."
     width= 제거     $STRING=preg_replace("/ width=(\"|\')?\d+(\"|\')?/","",$STRING);
     height= 제거    $STRING=preg_replace("/ height=(\"|\')?\d+(\"|\')?/","",$STRING);
-
-https://myeonguni.tistory.com/1555
-https://marketplace.visualstudio.com/items?itemName=janjoerke.align-by-regex
-http://zvon.org/comp/r/tut-Regexp.html#Pages~Contents
+    숫자만 : ^[0-9]*$
+    영문자만 : ^[a-zA-Z]*$
+    한글만 : ^[가-힣]*$
+    영어 & 숫자만 : ^[a-zA-Z0-9]*$
+    E-Mail : ^[a-zA-Z0-9]+@[a-zA-Z0-9]+$
+    휴대폰 :
+        ^01(?:0|1|[6-9]) - (?:\d{3}|\d{4}) - \d{4}$
+        /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/
+    일반전화 : ^\d{2,3} - \d{3,4} - \d{4}$
+    주민등록번호 : \d{6} \- [1-4]\d{6}
+    IP 주소 : ([0-9]{1,3}) \. ([0-9]{1,3}) \. ([0-9]{1,3}) \. ([0-9]{1,3})
+관련사이트
+    https://myeonguni.tistory.com/1555
+    https://marketplace.visualstudio.com/items?itemName=janjoerke.align-by-regex
+    http://zvon.org/comp/r/tut-Regexp.html#Pages~Contents

@@ -1,126 +1,62 @@
-
-예제
-    ^[0-9]*$ : 숫자
-    ^[a-zA-Z]*$ : 영문자. 패턴변경자를 써서 /^[a-z]*$/i 같이 쓸 수 있다.
-    ^[가-힣]*$ : 현대 한글(유니코드를 지원하는 정규식 엔진에 한정)
-    ^[ㄱ-ㅣ가-힣]*$ : 한글 자모 낱자를 포함한 모든 현대 한글
-    ^[a-zA-Z0-9]*$ : 영문/숫자
-메타문자
-    ^ : 문자열의 시작
-    $ : 문자열의 종료. 옵션에 따라 문장의 끝 또는 문서의 끝에 매치된다.
-    . : 임의의 한 문자
-    []: 문자 클래스. 문자 클래스 안에 들어가 있는 문자는 그 바깥에서 하나의 문자로 취급된다.
-    ^ : 문자 클래스 내에서 ^는 not
-    - : ex) a-z는 a에서 z까지의 문자
-    | : or를 나타냄
-    ? : 앞 문자가 없거나 하나 있음
-    + : 앞 문자가 하나 이상임
-    * : 앞 문자가 0개 이상임
-    {n,m} : 앞 문자가 n개 이상 m개 이하. {0,1} 은 ?와 같은 의미다.
-    {n,} : 앞 문자가 n개 이상. 위의 형태에서 m이 생략된 형태이다. {0,} 이면 *와 같고 {1,} 이면 +와 같은 의미이다.
-    {n} : 앞 문자가 정확히 n개. {n,n} 과 같은 의미이다.
-    () : 하나의 패턴구분자 안에 서브 패턴을 지정해서 사용할 경우 괄호로 묶어주는 방식을 사용한다.
+표현식
+    ^x 문자열의 시작을 표현하며 x 문자로 시작됨을 의미한다.
+    x$ 문자열의 종료를 표현하며 x 문자로 종료됨을 의미
+    .x 임의의 한 문자의 자리수를 표현하며 문자열이 x 로 끝난다는 것을 의미
+    x+ 반복을 표현하며 x 문자가 한번 이상 반복됨을 의미
+    x? 존재여부를 표현하며 x 문자가 존재할 수도, 존재하지 않을 수도 있음을 의미
+    x* 반복여부를 표현하며 x 문자가 0번 또는 그 이상 반복됨을 의미
+    x|y or 를 표현하며 x 또는 y 문자가 존재함을 의미
+    (x)그룹을 표현하며 x 를 그룹으로 처리함을 의미
+    (x)(y)그룹들의 집합을 표현하며 앞에서 부터 순서대로 번호를 부여하여 관리하고 x, y 는 각 그룹의 데이터로 관리된다. 
+    x)(?:y)그룹들의 집합에 대한 예외를 표현하며 그룹 집합으로 관리되지 않음을 의미 
+    x{n} 반복을 표현하며 x 문자가 n번 반복됨을 의미
+    x{n,} 반복을 표현하며 x 문자가 n번 이상 반복됨을 의미
+    x{n,m} 반복을 표현하며 x 문자가 최소 n번 이상 최대 m 번 이하로 반복됨을 의미한다.
+    [xy] 문자 선택을 표현하며 x 와 y 중에 하나를 의미
+    [^xy] not 을 표현하며  x 및 y 를 제외한 문자를 의미
+    [x-z]range를 표현하며 x ~ z 사이의 문자를 의미 
+    \^ escape 를 표현하며 ^ 를 문자로 사용함을 의미
+    \b  word boundary를 표현하며 문자와 공백사이의 문자를 의미
+    \B  non word boundary를 표현하며 문자와 공백사이가 아닌 문자를 의미
+    \d  digit 를 표현하며 숫자를 의미 
+    \D  non digit 를 표현하며 숫자가 아닌 것을 의미 
+    \s  space 를 표현하며 공백 문자를 의미 
+    \S  non space를 표현하며 공백 문자가 아닌 것을 의미
+    \t  tab 을 표현하며 탭 문자를 의미
+    \v  vertical tab을 표현하며 수직 탭(?) 문자를 의미
+    \w  word 를 표현하며 알파벳 + 숫자 + _ 중의 한 문자임을 의미 
+    \W  non word를 표현하며 알파벳 + 숫자 + _ 가 아닌 문자를 의미
+    g Global 의 표현하며 대상 문자열내에 모든 패턴들을 검색하는 것을 의미 
+    i Ignore case 를 표현하며 대상 문자열에 대해서 대/소문자를 식별하지 않는 것을 의미한다.
+    m Multi line을 표현하며 대상 문자열이 다중 라인의 문자열인 경우에도 검색하는 것을 의미
+기본메타문자
+    | OR 왼쪽 문자(혹은 패턴) 혹은 오른쪽 문자(혹은 패턴)과 일치
+    [] 문자 집합 구성원 중 하나와 일치 ex) [abc] : a 혹은 b 혹은 c
+    [^]  문자 집합 구성원을 제외하고 일치, [^abc] : a, b, c 제외한 모든 문자
+    - 범위 정의 ([A-Z]와 같은 형태로 대문자 A에서 Z사이의 문자를 의미)
+    \ 다음에 오는 문자를 이스케이프
     \s : 공백문자
     \b : 문자와 공백 사이를 의미한다.
     \d : 숫자 [0-9]와 같다.
     \t : 탭문자
     \w : 단어 영문자+숫자+_(밑줄) [0-9a-zA-Z_]
     문자 이스케이프는 대문자로 적으면 반대를 의미한다
-연습
-    abc…	Letters
-    123…	Digits
-    \d	Any Digit
-    \D	Any Non-digit character
-    .	Any Character
-    \.	Period
-    [abc]	Only a, b, or c
-    [^abc]	Not a, b, nor c
-    [a-z]	Characters a to z
-    [0-9]	Numbers 0 to 9
-    \w	Any Alphanumeric character
-    \W	Any Non-alphanumeric character
-    {m}	m Repetitions
-    {m,n}	m to n Repetitions
-    *	Zero or more repetitions
-    +	One or more repetitions
-    ?	Optional character
-    \s	Any Whitespace
-    \S	Any Non-whitespace character
-    ^…$	Starts and ends
-    (…)	Capture Group
-    (a(bc))	Capture Sub-group
-    (.*)	Capture all
-    (abc|def)	Matches abc or def
-표현식
-    ^x 문자열의 시작을 표현하며 x 문자로 시작됨을 의미한다.
-    x$ 문자열의 종료를 표현하며 x 문자로 종료됨을 의미한다. 
-    .x 임의의 한 문자의 자리수를 표현하며 문자열이 x 로 끝난다는 것을 의미한다. 
-    x+ 반복을 표현하며 x 문자가 한번 이상 반복됨을 의미한다. 
-    x? 존재여부를 표현하며 x 문자가 존재할 수도, 존재하지 않을 수도 있음을 의미한다. 
-    x* 반복여부를 표현하며 x 문자가 0번 또는 그 이상 반복됨을 의미한다. 
-    x|y or 를 표현하며 x 또는 y 문자가 존재함을 의미한다. 
-    (x)그룹을 표현하며 x 를 그룹으로 처리함을 의미한다. 
-    (x)(y)그룹들의 집합을 표현하며 앞에서 부터 순서대로 번호를 부여하여 관리하고 x, y 는 각 그룹의 데이터로 관리된다. 
-    x)(?:y)그룹들의 집합에 대한 예외를 표현하며 그룹 집합으로 관리되지 않음을 의미한다.  
-    x{n} 반복을 표현하며 x 문자가 n번 반복됨을 의미한다. 
-    x{n,} 반복을 표현하며 x 문자가 n번 이상 반복됨을 의미한다. 
-    x{n,m} 반복을 표현하며 x 문자가 최소 n번 이상 최대 m 번 이하로 반복됨을 의미한다.
-       [xy] 문자 선택을 표현하며 x 와 y 중에 하나를 의미한다. 
-    [^xy] not 을 표현하며  x 및 y 를 제외한 문자를 의미한다. 
-    [x-z]range를 표현하며 x ~ z 사이의 문자를 의미한다.  
-    \^ escape 를 표현하며 ^ 를 문자로 사용함을 의미한다. 
-    \b  word boundary를 표현하며 문자와 공백사이의 문자를 의미한다. 
-    \B  non word boundary를 표현하며 문자와 공백사이가 아닌 문자를 의미한다. 
-    \d  digit 를 표현하며 숫자를 의미한다.  
-    \D  non digit 를 표현하며 숫자가 아닌 것을 의미한다.  
-    \s  space 를 표현하며 공백 문자를 의미한다.  
-    \S  non space를 표현하며 공백 문자가 아닌 것을 의미한다. 
-    \t  tab 을 표현하며 탭 문자를 의미한다. 
-    \v  vertical tab을 표현하며 수직 탭(?) 문자를 의미한다. 
-    \w  word 를 표현하며 알파벳 + 숫자 + _ 중의 한 문자임을 의미한다.  
-    \W  non word를 표현하며 알파벳 + 숫자 + _ 가 아닌 문자를 의미한다. 
-    g Global 의 표현하며 대상 문자열내에 모든 패턴들을 검색하는 것을 의미한다.  
-    i Ignore case 를 표현하며 대상 문자열에 대해서 대/소문자를 식별하지 않는 것을 의미한다.
-    m Multi line을 표현하며 대상 문자열이 다중 라인의 문자열인 경우에도 검색하는 것을 의미한다. 
- Character classes
-    .	any character except newline
-    \w\d\s	word, digit, whitespace
-    \W\D\S	not word, digit, whitespace
-    [abc]	any of a, b, or c
-    [^abc]	not a, b, or c
-    [a-g]	character between a & g
-    Anchors
-    ^abc$	start / end of the string
-    \b\B	word, not-word boundary
-Escaped characters
-    \.\*\\	escaped special characters
-    \t\n\r	tab, linefeed, carriage return
-    Groups & Lookaround
-    (abc)	capture group
-    \1	backreference to group #1
-    (?:abc)	non-capturing group
-    (?=abc)	positive lookahead
-    (?!abc)	negative lookahead
-    Quantifiers & Alternation
-    a*a+a?	0 or more, 1 or more, 0 or 1
-    a{5}a{2,}	exactly five, two or more
-    a{1,3}	between one & three
-    a+?a{2,}?	match as few as possible
-    ab|cd	match ab or cd
-
-
-기본메타문자
-    . 모든 문자 일치
-    | OR 왼쪽 문자(혹은 패턴) 혹은 오른쪽 문자(혹은 패턴)과 일치
-    [] 문자 집합 구성원 중 하나와 일치 ex) [abc] : a 혹은 b 혹은 c
-    [^]  문자 집합 구성원을 제외하고 일치, [^abc] : a, b, c 제외한 모든 문자
-    - 범위 정의 ([A-Z]와 같은 형태로 대문자 A에서 Z사이의 문자를 의미)
-    \ 다음에 오는 문자를 이스케이프
+    ^ : 문자열의 시작
+    $ : 문자열의 종료. 옵션에 따라 문장의 끝 또는 문서의 끝에 매치된다. 
+    . : 임의의 한 문자
+    []: 문자 클래스. 문자 클래스 안에 들어가 있는 문자는 그 바깥에서 하나의 문자로 취급된다.
+    ^ : 문자 클래스 내에서 ^는 not
+    - : ex) a-z는 a에서 z까지의 문자
+    ? : 앞 문자가 없거나 하나 있음
 수량자
+    + : 앞 문자가 하나 이상임
+    * : 앞 문자가 0개 이상임
+    {n,m} : 앞 문자가 n개 이상 m개 이하. {0,1} 은 ?와 같은 의미다.
+    {n,} : 앞 문자가 n개 이상. 위의 형태에서 m이 생략된 형태이다. {0,} 이면 *와 같고 {1,} 이면 +와 같은 의미이다.
+    {n} : 앞 문자가 정확히 n개. {n,n} 과 같은 의미이다.
+    () : 하나의 패턴구분자 안에 서브 패턴을 지정해서 사용할 경우 괄호로 묶어주는 방식을 사용한다.
     * 앞의 문자나 부분식이 0개 이상 탐욕적으로 찾기
     *? 탐욕적 수량자 *를 게으른(lazy) 수량자로 바꿔 찾기
-    + 앞의 문자나 부분식을 하나 이상 탐욕적으로 찾기
-    +? 탐욕적 수량자 +를 제으른(lazy) 수량자로 바꿔 찾기
     ? 앞의 문자나 부분식을 0개나 1개 찾기
     {n} 앞의 문자나 부분식이 정확히 n번 일치하는 경우 찾기
     {m,n} 앞의 문자나 부분식이 m번에서 n번 일치하는 경우 찾기
@@ -182,19 +118,17 @@ Escaped characters
     a{3,}   a 가 3번이상 반복인 것
     [0-9]{2}    두 자리 숫자
     abc[7-9]{2}     abc 를 포함하고 7~9까지 숫자 중 2자리가 포함하는 것
+    ^[0-9]*$ : 숫자
+    ^[a-zA-Z]*$ : 영문자. 패턴변경자를 써서 /^[a-z]*$/i 같이 쓸 수 있다.
+    ^[가-힣]*$ : 현대 한글(유니코드를 지원하는 정규식 엔진에 한정)
+    ^[ㄱ-ㅣ가-힣]*$ : 한글 자모 낱자를 포함한 모든 현대 한글
+    ^[a-zA-Z0-9]*$ : 영문과 숫자
     이메일  "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/"
     집전화번호  "/^(070|02|031|032|033|041|042|043|051|052|053|054|055|061|062|063|064)-\d{3,4}-\d{4}$/u"
     휴대폰번호  "/^(010|011|016|017|018|019)-\d{3,4}-\d{4}$/u"
     우편번호    "/^\d{3}-?\d{3}$/u"
     아이디  "/^[a-zA-Z]\w{2,7}$/u"
     주민등록번호    "/^\d{2}[0-1]\d[0-3]\d-?[1-6]\d{6}$/u"
-    iframe 제거     $STRING=preg_replace("!<iframe(.*?)<\/iframe>!is","",$STRING);
-    &nbsp; 제거     $STRING=str_replace("&nbsp;"," ",$STRING);
-    복수 공백 하나로    $STRING=preg_replace("/\s{2,}/"," ",$STRING)
-    style= 제거     $STRING=preg_replace("/ style=([^\"\']+) /"," ",$STRING); // style=border:0...
-    style="" 제거   $STRING=preg_replace("/ style=(\"|\')?([^\"\']+)(\"|\')?/","",$STRING); // style="border:0..."
-    width= 제거     $STRING=preg_replace("/ width=(\"|\')?\d+(\"|\')?/","",$STRING);
-    height= 제거    $STRING=preg_replace("/ height=(\"|\')?\d+(\"|\')?/","",$STRING);
     숫자만 : ^[0-9]*$
     영문자만 : ^[a-zA-Z]*$
     한글만 : ^[가-힣]*$
@@ -202,11 +136,19 @@ Escaped characters
     E-Mail : ^[a-zA-Z0-9]+@[a-zA-Z0-9]+$
     휴대폰 :
         ^01(?:0|1|[6-9]) - (?:\d{3}|\d{4}) - \d{4}$
-        /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/
+        ^01([0|1|6|7|8|9]?) - ?([0-9]{3,4})-?([0-9]{4})$
     일반전화 : ^\d{2,3} - \d{3,4} - \d{4}$
     주민등록번호 : \d{6} \- [1-4]\d{6}
     IP 주소 : ([0-9]{1,3}) \. ([0-9]{1,3}) \. ([0-9]{1,3}) \. ([0-9]{1,3})
 관련사이트
-    https://myeonguni.tistory.com/1555
-    https://marketplace.visualstudio.com/items?itemName=janjoerke.align-by-regex
-    http://zvon.org/comp/r/tut-Regexp.html#Pages~Contents
+    참고사이트
+        https://myeonguni.tistory.com/1555
+        https://marketplace.visualstudio.com/items?itemName=janjoerke.align-by-regex
+        http://zvon.org/comp/r/tut-Regexp.html#Pages~Contents
+    테스트/강의
+        https://regexone.com/ 
+        https://regexr.com/ 
+        https://regex101.com/
+    검사/시각화
+        https://regexper.com
+        https://www.debuggex.com/

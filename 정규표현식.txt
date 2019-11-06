@@ -151,15 +151,14 @@
     참고사이트
         https://myeonguni.tistory.com/1555
         https://marketplace.visualstudio.com/items?itemName=janjoerke.align-by-regex
-        http://zvon.org/comp/r/tut-Regexp.html#Pages~Contents
     테스트/강의
         https://regexone.com/
         https://regexr.com/
         https://regex101.com/
+        http://zvon.org/comp/r/tut-Regexp.html#Pages~Contents
     검사/시각화.
         https://regexper.com
         https://www.debuggex.com/
-
 Lib
     . : 모든단어
     * : 0개 또는 1개 이상
@@ -195,3 +194,4 @@ Lib
     "|' : 따옴표만 선택
     \A...  문단 단어 첫 3자 선택
     ...\Z  문단 마지막 3자 선택
+    ([A-Z])\w+ : 영단어 대문자로 시작되는 단어
